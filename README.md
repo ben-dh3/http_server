@@ -1,6 +1,6 @@
 # HTTP Server Made Using Python
 
-Server made using [this](https://bhch.github.io/posts/2017/11/writing-an-http-server-from-scratch/) tutorial as guidance.
+Server made using [this](https://bhch.github.io/posts/2017/11/writing-an-http-server-from-scratch/) tutorial as guidance, with added POST request functionality.
 
 Made for the purpose of understanding the HTTP protocol, the HTTP server is built on a TCP echo server made using Python's socket library. 
 
