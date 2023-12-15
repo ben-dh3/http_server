@@ -1,4 +1,4 @@
-# HTTP server made using Python
+# HTTP Server Made Using Python
 
 Server made using [this](https://bhch.github.io/posts/2017/11/writing-an-http-server-from-scratch/) tutorial as guidance.
 
