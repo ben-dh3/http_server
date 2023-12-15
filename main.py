@@ -51,7 +51,6 @@ class HTTPServer(TCPServer):
         request = HTTPRequest(data)
         try:
             handler = getattr(self, 'handle_%s' % request.method)
-            print(self)
         except AttributeError:
             handler = self.HTTP_501_handler
 
@@ -109,6 +108,26 @@ class HTTPServer(TCPServer):
             response_body = b"<h1>404 Not Found</h1>"
 
         blank_line = b"\r\n"
+
+        return b"".join([response_line, response_headers, blank_line, response_body])
+
+    def handle_POST(self, request):
+        filename = request.uri.strip('/') # remove the slash from the request URI
+
+        if os.path.exists(filename):
+            response_line = self.response_line(status_code=200)
+
+            response_headers = self.response_headers()
+            with open(filename, 'w') as f:
+                f.write("<html>\n<head>\n<title> \nPost request example</title>\n</head> <body><h1>This HTML has been changed with POST request</h1>\n</body></html>")
+            with open(filename, 'rb') as f:
+                response_body = f.read()
+        else:
+            response_line = self.response_line(status_code=404)
+            response_headers = self.response_headers()
+            response_body = b"<h1>404 Not Found</h1>"
+
+        blank_line = b"\r\n" 
 
         return b"".join([response_line, response_headers, blank_line, response_body])
 
