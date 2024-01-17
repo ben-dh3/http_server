@@ -2,9 +2,9 @@
 
 Server made using [this](https://bhch.github.io/posts/2017/11/writing-an-http-server-from-scratch/) tutorial as guidance, with added POST request functionality.
 
-Made for the purpose of understanding the HTTP protocol, the HTTP server is built on a TCP server made using Python's socket library. 
+Made for the purpose of understanding the HTTP protocol, the HTTP server is built on a TCP server made using Python's socket library.
 
-In the future I intend to write an article explaining HTTP and TCP and how this server works.
+Wrote an [article](https://medium.com/@benjaminduffield1997/all-about-http-38a4a508cfaf) explaining HTTP and TCP and how this server works.
 
 # How to Run the Project
 
